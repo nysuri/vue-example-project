@@ -24,11 +24,12 @@ Before starting, make sure you have:
 
 We'll cover Vue's core concepts progressively as we build our app. Each section explains a concent, shows how to use it, and includes excercises.
 
+<hr style="max-width:24rem; margin-top:2rem"/>
+
 ## Let's Get Started!
 
 First, let's understand the difference between Options API and Composition API
 
-<hr style="max-width:24rem; margin-top:2rem"/>
-<a href="1. options-vs-composition.md" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; line-height: 1.5; transition: all 0.2s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-  Next: Options vs Composition API →
+<a href="1. options-vs-composition" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; line-height: 1.5; transition: all 0.2s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+  Next: Options vs Composition API
 </a>
