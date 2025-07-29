@@ -115,9 +115,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem; /* space-y-6 */
-}
-
-.book-section {
   width: 100%;
 }
 
@@ -136,6 +133,9 @@ body {
 }
 
 .book-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   background-color: #ffffff; /* bg-card */
   padding: 1rem; /* p-4 */
   border-radius: 0.5rem; /* rounded-lg */
@@ -208,9 +208,6 @@ body {
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .delete-button:hover {

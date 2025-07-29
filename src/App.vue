@@ -2,8 +2,8 @@
 import TheNavbar from './components/TheNavbar.vue'
 
 const books = [
-  { id: 1, title: 'Vue 3 Basics', author: 'John Doe', isAvailable: true },
-  { id: 2, title: 'Composition API', author: 'Jane Smith', isAvailable: false },
+  { id: 1, title: 'Vue 3 Basics', read: false },
+  { id: 2, title: 'Composition API', read: false },
 ]
 </script>
 
@@ -21,10 +21,6 @@ const books = [
           <label for="title" class="form-label"> Title </label>
           <input id="title" type="text" placeholder="Enter book title" class="form-input" />
         </div>
-        <div class="form-group">
-          <label for="author" class="form-label"> Author </label>
-          <input id="author" type="text" placeholder="Enter author name" class="form-input" />
-        </div>
         <button type="submit" class="submit-button">Add Book</button>
       </div>
     </form>
@@ -34,16 +30,15 @@ const books = [
     <div class="book-list">
       <!-- Todo: add an empty books state. -->
 
-      <div class="book-sections">
-        <div class="book-section">
-          <h3 class="section-title">A list of my books ({{ books.length }})</h3>
-          <div class="book-items">
-            <!-- Todo: Add a list of books -->
-            <ul>
-              <li class="book-title">{{ books[0].title }} - {{ books[0].author }}</li>
-              <li class="book-title">{{ books[1].title }} - {{ books[1].author }}</li>
-            </ul>
-          </div>
+      <div>
+        <h3 class="section-title">A list of my books ({{ books.length }})</h3>
+        <div class="book-items">
+          <ul>
+            <li class="book-item">
+              <p class="book-title"><!-- Show the first book here --></p>
+              <button class="delete-button">Delete</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
