@@ -64,5 +64,6 @@ function removeBook(book) {
   font-weight: 700; /* font-bold */
   color: #1a202c; /* text-foreground */
   text-align: center;
+  margin: 2.5rem 0;
 }
 </style>
