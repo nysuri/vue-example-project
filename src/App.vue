@@ -1,10 +1,19 @@
 <script setup>
 import TheNavbar from './components/TheNavbar.vue'
+import { ref } from 'vue'
 
-const books = [
+const books = ref([
   { id: 1, title: 'Vue 3 Basics', read: false },
   { id: 2, title: 'Composition API', read: false },
-]
+])
+
+function toggleRead(id) {
+  const foundBook = books.value.find((book) => book.id === id)
+
+  if (foundBook) {
+    foundBook.read = !foundBook.read
+  }
+}
 </script>
 
 <template>
@@ -32,14 +41,15 @@ const books = [
 
       <div>
         <h3 class="section-title">A list of my books ({{ books.length }})</h3>
-        <div class="book-items">
-          <ul>
-            <li class="book-item">
-              <p class="book-title"><!-- Show the first book here --></p>
+        <ul class="book-items">
+          <li id="1" class="book-item">
+            <p class="book-title" :class="{ read: books[0].read }">{{ books[0].title }}</p>
+            <div>
+              <button class="read-button" v-on:click="toggleRead(books[0].id)">Mark as read</button>
               <button class="delete-button">Delete</button>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </main>
