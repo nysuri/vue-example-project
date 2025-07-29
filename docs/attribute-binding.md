@@ -16,4 +16,13 @@ Because v-bind is used so frequently, it has a dedicated shorthand syntax:
 <div :id="dynamicId"></div>
 ```
 
-Now, try to add a dynamic class binding to the.., using the titleClass ref as its value. If it's bound correctly, the text should turn red.
+### In our library app
+
+Every book has a unique identifier (`id`).
+Let's make the id of the list unique. Change the following line `<li id="1" class="book-item">` to: `<li :id="books[0].id" class="book-item">`
+
+Neat! Although we don't see anything happening yet, we need the id for things like toggling classes and deleting the book.
+
+Let's see how we can use this id in the next chapter.
+
+[Event Listeners](event-listeners.md)
