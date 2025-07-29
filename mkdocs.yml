@@ -10,7 +10,7 @@ theme:
   hide_site_name: true
   content_margin_top: 0px
   header_color: 'rgb(255, 255, 255, 0.2)'
-  logo: assets/logo.png
+  logo: assets/logo.jpg
   favicon: assets/hva-logo.png
   language: en
 
