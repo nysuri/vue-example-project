@@ -53,10 +53,12 @@ const books = ref([
 
 2. In the template, display the first book's title:
 
+{% raw %}
 ```vue
 <h2>First Book: {{ books[0].title }}</h2>
 <p>by {{ books[0].author }}</p>
 ```
+{% endraw %}
 
 
 Next, let's learn how to bind attributes → (Attribute Binding)[link]
