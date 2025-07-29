@@ -16,6 +16,16 @@ Because v-bind is used so frequently, it has a dedicated shorthand syntax:
 <div :id="dynamicId"></div>
 ```
 
+Note: id is not the only thing we can bind to html-elements. There are many more like class, style, value, href, src, and event handlers such as onclick, onmouseover, etc.
+
+For example:
+
+```vue
+<div class="static" :class="{ active: isActive, 'text-danger': hasError }"></div>
+```
+
+You can have both the static as well as the dynamic attribute bind to the element (class & :class).
+
 ### In our library app
 
 Every book has a unique identifier (`id`).
