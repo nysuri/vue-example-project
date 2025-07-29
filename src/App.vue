@@ -8,11 +8,15 @@ const books = ref([
 ])
 
 function toggleRead(id) {
-  const foundBook = books.value.find((book) => book.id === id)
+  // TODO
+}
 
-  if (foundBook) {
-    foundBook.read = !foundBook.read
-  }
+function addBook(book) {
+  // TODO
+}
+
+function removeBook(book) {
+  // TODO
 }
 </script>
 
@@ -43,9 +47,9 @@ function toggleRead(id) {
         <h3 class="section-title">A list of my books ({{ books.length }})</h3>
         <ul class="book-items">
           <li id="1" class="book-item">
-            <p class="book-title" :class="{ read: books[0].read }">{{ books[0].title }}</p>
+            <p class="book-title"><!-- Show the first book here --></p>
             <div>
-              <button class="read-button" v-on:click="toggleRead(books[0].id)">Mark as read</button>
+              <button class="read-button">Mark as read</button>
               <button class="delete-button">Delete</button>
             </div>
           </li>
