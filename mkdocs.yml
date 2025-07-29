@@ -7,7 +7,7 @@ theme:
   name: material
 
   custom_dir: mdocotion/
-  hide_site_name: true
+  hide_site_name: false
   content_margin_top: 0px
   header_color: 'rgb(255, 255, 255, 0.2)'
   logo: assets/logo.png
