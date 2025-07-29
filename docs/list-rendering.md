@@ -34,4 +34,6 @@ books.value = books.value.filter(/* ... */)
 
 ### Exercise
 
-1. Loop through the books and display them with the help of the `v-for` directive. Use the unique `id` and bind it as the special key attribute for each `<li>` (`:key`)
+1. Remove the hardcoded `books[0]`. Loop through the books array and display them with the help of the `v-for` directive. Use the unique `id` and bind it as the special key attribute for each `<li>` (`:key`)
+
+2. Update the app so that toggleBook(), addBook() and updateBook() works for each book in the list.
