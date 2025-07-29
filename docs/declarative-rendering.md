@@ -1,11 +1,11 @@
 # Declarative Rendering
 
 
-What you see in the ==App.vue== file is a Vue Single-File Component (SFC). An SFC is a reusable self-contained block of code that encapsulates HTML, CSS and JavaScript that belong together, written inside a ==.vue== file.
+What you see in the `App.vue` file is a Vue Single-File Component (SFC). An SFC is a reusable self-contained block of code that encapsulates HTML, CSS and JavaScript that belong together, written inside a `.vue` file.
 
 The core feature of Vue is declarative rendering: using a template syntax that extends HTML, we can describe how the HTML should look based on JavaScript state. When the state changes, the HTML updates automatically.
 
-State that can trigger updates when changed is considered reactive. We can declare reactive state using Vue's ==ref()== API.
+State that can trigger updates when changed is considered reactive. We can declare reactive state using Vue's `ref()` API.
 
 ```vue
 import { ref } from 'vue'
@@ -16,11 +16,11 @@ console.log(message.value) // "Hello World!"
 message.value = 'Changed'
 ```
 
-==ref()== can take any value type and create an object that exposes the inner value under a .value property.
+`ref()` can take any value type and create an object that exposes the inner value under a .value property.
 
 ### Rendering
 
-Reactive state declared in the component's ==<script setup>== block can be used directly in the template. This is how we can render dynamic text based on the value of the counter object and message ref, using mustaches syntax:
+Reactive state declared in the component's `<script setup>` block can be used directly in the template. This is how we can render dynamic text based on the value of the counter object and message ref, using mustaches syntax:
 
 {% raw %}
 ```vue
@@ -40,7 +40,7 @@ The content inside the mustaches is not limited to just identifiers or paths - w
 
 ### In our library app
 
-Now, try to create some reactive state yourself. In the starter code, open ==src/App.vue==. You'll see a basic template with some placeholder content.
+Now, try to create some reactive state yourself. In the starter code, open `src/App.vue`. You'll see a basic template with some placeholder content.
 
 1. Add the following in the script to create a reactive books array: 
 
