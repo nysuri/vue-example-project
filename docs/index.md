@@ -30,6 +30,6 @@ We'll cover Vue's core concepts progressively as we build our app. Each section 
 
 First, let's understand the difference between Options API and Composition API
 
-<a href="1.options-vs-composition" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; line-height: 1.5; transition: all 0.2s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+<a href="/1.options-vs-composition" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; line-height: 1.5; transition: all 0.2s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
   Next: Options vs Composition API
 </a>
