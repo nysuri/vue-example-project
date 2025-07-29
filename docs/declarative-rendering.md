@@ -22,9 +22,12 @@ message.value = 'Changed'
 
 Reactive state declared in the component's ==<script setup>== block can be used directly in the template. This is how we can render dynamic text based on the value of the counter object and message ref, using mustaches syntax:
 
+{% raw %}
 ```vue
 <h1>{{ message }}</h1>
 ```
+{% endraw %}
+
 Notice how we did not need to use .value when accessing the message ref in templates: it is automatically unwrapped for more succinct usage.
 
 The content inside the mustaches is not limited to just identifiers or paths - we can use any valid JavaScript expression:
