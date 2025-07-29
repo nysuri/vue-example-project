@@ -1,7 +1,18 @@
-variables:
-  DEPLOY_MKDOCS: "true"
-  DEPLOY_HIC: "false"
-
-include:
-  - ".gitlab-ci.mkdocs.yml"
-
+# The Docker image that will be used to build your app
+image: python:3.9-slim
+create-pages:
+  pages:
+    # The folder that contains the files to be exposed at the Page URL
+    publish: public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  # Functions that should be executed before the build script is run
+  before_script:
+    - time apt update && apt-get install -y git
+    - time pip install -r requirements.txt
+    - time git clone https://uva-hva.gitlab.host/hbo-ict/mdocotion.git mdocotion
+    - time cd mdocotion && python setup.py install && cd ..
+  script:
+    - time mkdocs build --site-dir public
