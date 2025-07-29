@@ -1,6 +1,5 @@
 # Declarative Rendering
 
-
 What you see in the `App.vue` file is a Vue Single-File Component (SFC). An SFC is a reusable self-contained block of code that encapsulates HTML, CSS and JavaScript that belong together, written inside a `.vue` file.
 
 The core feature of Vue is declarative rendering: using a template syntax that extends HTML, we can describe how the HTML should look based on JavaScript state. When the state changes, the HTML updates automatically.
@@ -8,15 +7,22 @@ The core feature of Vue is declarative rendering: using a template syntax that e
 State that can trigger updates when changed is considered reactive. We can declare reactive state using Vue's `ref()` API.
 
 ```vue
-import { ref } from 'vue'
+import { ref } from 'vue' 
 
-const message = ref('Hello World!')
+const message = ref('Hello World!') 
 
-console.log(message.value) // "Hello World!"
-message.value = 'Changed'
+console.log(message.value) // "Hello
+World!" message.value = 'Changed'
 ```
 
-`ref()` can take any value type and create an object that exposes the inner value under a .value property.
+`ref()` can take any value type and create an object that exposes the inner value under a .value property:
+
+```vue
+const user = ref({
+  name: 'John Doe',
+  age: 26
+})
+```
 
 ### Rendering
 
@@ -40,27 +46,15 @@ The content inside the mustaches is not limited to just identifiers or paths - w
 
 ### In our library app
 
-Now, try to create some reactive state yourself. In the starter code, open `src/App.vue`. You'll see a basic template with some placeholder content.
+Now, try to create some reactive state yourself. In the starter code, open `src/App.vue`.
 
-1. Add the following in the script to create a reactive books array: 
+1. You'll see a books array. Make the array dynamic with `ref`. Don't forget to import the function!
 
-```vue
-import { ref } from 'vue'
+2. Remove the placeholder `<!-- Show the first book here -->` and display the title of the first book (array starts at index zero!).
 
-const books = ref([
-  { id: 1, title: 'Vue 3 Basics', author: 'John Doe', isAvailable: true },
-  { id: 2, title: 'Composition API', author: 'Jane Smith', isAvailable: false }
-])
-```
 
-2. In the template, display the first book's title:
+### Next 
 
-{% raw %}
-```vue
-<h2>First Book: {{ books[0].title }}</h2>
-<p>by {{ books[0].author }}</p>
-```
-{% endraw %}
-
+Congratulations! You now understand how to dynamically render objects in VueJS.
 
 Next, let's learn how to bind attributes → (Attribute Binding)[link]
