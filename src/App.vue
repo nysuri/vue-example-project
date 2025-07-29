@@ -26,23 +26,10 @@ function removeBook(book) {
   <main class="container">
     <h1 class="title">Welcome to the Library Book Tracker</h1>
 
-    <!-- Form to add a new book -->
-    <form class="book-form">
-      <h2 class="form-title">Add New Book</h2>
-      <div class="form-content">
-        <div class="form-group">
-          <label for="title" class="form-label"> Title </label>
-          <input id="title" type="text" placeholder="Enter book title" class="form-input" />
-        </div>
-        <button type="submit" class="submit-button">Add Book</button>
-      </div>
-    </form>
-
     <!-- Display list of books -->
 
     <div class="book-list">
       <!-- Todo: add an empty books state. -->
-
       <div>
         <h3 class="section-title">A list of my books ({{ books.length }})</h3>
         <ul class="book-items">
@@ -56,6 +43,18 @@ function removeBook(book) {
         </ul>
       </div>
     </div>
+
+    <!-- Form to add a new book -->
+    <form class="book-form">
+      <h2 class="form-title">Add New Book</h2>
+      <div class="form-content">
+        <div class="form-group">
+          <label for="title" class="form-label"> Title </label>
+          <input id="title" type="text" placeholder="Enter book title" class="form-input" />
+        </div>
+        <button type="submit" class="submit-button">Add Book</button>
+      </div>
+    </form>
   </main>
 </template>
 
