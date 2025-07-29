@@ -32,9 +32,11 @@ Notice how we did not need to use .value when accessing the message ref in templ
 
 The content inside the mustaches is not limited to just identifiers or paths - we can use any valid JavaScript expression:
 
+{% raw %}
 ```vue
 <h1>{{ message.split('').reverse().join('') }}</h1>
 ```
+{% endraw %}
 
 ### In our library app
 

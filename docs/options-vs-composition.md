@@ -20,7 +20,7 @@
 
 **Options API**
 
-```js
+```vue
 <script>
 export default {
   data() {
@@ -46,7 +46,7 @@ export default {
 
 **Composition API**
 
-```js
+```vue
 <script setup>
 import { ref, onMounted } from 'vue'
 
