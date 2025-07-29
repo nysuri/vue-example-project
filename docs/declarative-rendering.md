@@ -7,7 +7,7 @@ The core feature of Vue is declarative rendering: using a template syntax that e
 
 State that can trigger updates when changed is considered reactive. We can declare reactive state using Vue's ==ref()== API.
 
-```js
+```vue
 import { ref } from 'vue'
 
 const message = ref('Hello World!')
@@ -22,14 +22,14 @@ message.value = 'Changed'
 
 Reactive state declared in the component's ==<script setup>== block can be used directly in the template. This is how we can render dynamic text based on the value of the counter object and message ref, using mustaches syntax:
 
-```js
+```vue
 <h1>{{ message }}</h1>
 ```
 Notice how we did not need to use .value when accessing the message ref in templates: it is automatically unwrapped for more succinct usage.
 
 The content inside the mustaches is not limited to just identifiers or paths - we can use any valid JavaScript expression:
 
-```js
+```vue
 <h1>{{ message.split('').reverse().join('') }}</h1>
 ```
 
@@ -39,7 +39,7 @@ Now, try to create some reactive state yourself. In the starter code, open ==src
 
 1. Add the following in the script to create a reactive books array: 
 
-```js
+```vue
 import { ref } from 'vue'
 
 const books = ref([
@@ -50,7 +50,7 @@ const books = ref([
 
 2. In the template, display the first book's title:
 
-```
+```vue
 <h2>First Book: {{ books[0].title }}</h2>
 <p>by {{ books[0].author }}</p>
 ```
