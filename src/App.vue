@@ -2,10 +2,10 @@
 import TheNavbar from './components/TheNavbar.vue'
 import { ref } from 'vue'
 
-const books = ref([
+const books = [
   { id: 1, title: 'Vue 3 Basics', read: false },
   { id: 2, title: 'Composition API', read: false },
-])
+]
 
 function toggleRead(id) {
   // TODO
