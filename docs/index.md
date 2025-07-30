@@ -1,4 +1,4 @@
-# Workshop VueJS: Library Management App
+# Workshop VueJS
 
 ## Introduction
 
