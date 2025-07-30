@@ -68,4 +68,9 @@ function removeBook(book) {
   text-align: center;
   margin: 2.5rem 0;
 }
+
+.read {
+  color: #6b7280; /* text-muted-foreground */
+  text-decoration: line-through;
+}
 </style>

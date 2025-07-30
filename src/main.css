@@ -161,11 +161,6 @@ body {
   margin: 0;
 }
 
-.read {
-  color: #6b7280; /* text-muted-foreground */
-  text-decoration: line-through;
-}
-
 .book-author {
   font-size: 0.875rem; /* text-sm */
   color: #6b7280; /* text-muted-foreground */
