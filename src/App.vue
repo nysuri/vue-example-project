@@ -2,13 +2,17 @@
 import TheNavbar from './components/TheNavbar.vue'
 import { ref } from 'vue'
 
-const books = [
+const books = ref([
   { id: 1, title: 'Vue 3 Basics', read: false },
   { id: 2, title: 'Composition API', read: false },
-]
+])
 
 function toggleRead(id) {
-  // TODO
+  const foundBook = books.value.find((book) => book.id === id)
+
+  if (foundBook) {
+    foundBook.read = !foundBook.read
+  }
 }
 
 function addBook(book) {
@@ -33,12 +37,13 @@ function removeBook(book) {
       <div>
         <h3 class="section-title">A list of my books ({{ books.length }})</h3>
         <ul class="book-items">
-          <li id="1" class="book-item">
-            <p class="book-title">
+          <li :id="books[0].id" class="book-item">
+            <p class="book-title" :class="{ read: books[0].read }">
+              {{ books[0].title }}
               <!-- Show the first book here -->
             </p>
             <div>
-              <button class="read-button">Mark as read</button>
+              <button class="read-button" @click="toggleRead(books[0].id)">Mark as read</button>
               <button class="delete-button">Delete</button>
             </div>
           </li>
