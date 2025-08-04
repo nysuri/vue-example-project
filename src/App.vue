@@ -15,12 +15,19 @@ function toggleRead(id) {
   }
 }
 
-function addBook(book) {
+function addBook(id) {
   // TODO
+  const newBook = {
+    id,
+    title: 'New Book',
+    read: false,
+  }
+  books.value.push(newBook)
 }
 
-function removeBook(book) {
+function deleteBook(id) {
   // TODO
+  books.value = books.value.filter((book) => book.id !== id)
 }
 </script>
 
@@ -37,14 +44,14 @@ function removeBook(book) {
       <div>
         <h3 class="section-title">A list of my books ({{ books.length }})</h3>
         <ul class="book-items">
-          <li :id="books[0].id" class="book-item">
-            <p class="book-title" :class="{ read: books[0].read }">
-              {{ books[0].title }}
+          <li v-for="book in books" :id="`book-${book.id}`" class="book-item">
+            <p class="book-title" :class="{ read: book.read }">
+              {{ book.title }}
               <!-- Show the first book here -->
             </p>
             <div>
-              <button class="read-button" @click="toggleRead(books[0].id)">Mark as read</button>
-              <button class="delete-button">Delete</button>
+              <button class="read-button" @click="toggleRead(book.id)">Mark as read</button>
+              <button class="delete-button" @click="deleteBook(book.id)">Delete</button>
             </div>
           </li>
         </ul>

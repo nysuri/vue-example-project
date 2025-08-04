@@ -156,9 +156,10 @@ body {
 }
 
 .book-title {
-  font-weight: 500; /* font-medium */
+  font-weight: 400; /* font-medium */
   color: #1f2937; /* text-foreground */
   margin: 0;
+  font-size: 0.9rem;
 }
 
 .book-author {
