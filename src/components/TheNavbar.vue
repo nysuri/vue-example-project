@@ -23,6 +23,7 @@ const routes = [
   align-items: center;
   padding: 14px 24px;
   border-bottom: 1px solid #ddd;
+  background-color: #fff;
 }
 .logo {
   color: #0074ff;

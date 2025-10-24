@@ -17,7 +17,7 @@ const props = defineProps({
 
 <style scoped>
 .candidate-card {
-  background-color: #f5f5f5;
+  background-color: #fff;
   border-radius: 8px;
   padding: 12px 16px;
   display: flex;

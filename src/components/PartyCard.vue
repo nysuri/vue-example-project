@@ -18,22 +18,20 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { useRouter } from "vue-router";
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 
 const props = defineProps({
-  party: Object
-});
+  party: Object,
+})
 
-const router = useRouter();
+const router = useRouter()
 
 const goToDetails = () => {
-  router.push(`/party/${props.party.id}`);
-};
+  router.push(`/party/${props.party.id}`)
+}
 
-const formattedVotes = computed(() =>
-  props.party.votes.toLocaleString("en-US")
-);
+const formattedVotes = computed(() => props.party.votes.toLocaleString('en-US'))
 </script>
 
 <style scoped>
@@ -46,6 +44,7 @@ const formattedVotes = computed(() =>
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #fff;
 }
 .party-card:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

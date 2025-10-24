@@ -30,28 +30,28 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import { parties } from "@/data/parties";
-import CandidateCard from "@/components/CandidateCard.vue";
+import { ref, computed, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { parties } from '@/data/parties'
+import CandidateCard from '@/components/CandidateCard.vue'
 
-const route = useRoute();
-const router = useRouter();
+const route = useRoute()
+const router = useRouter()
 
-const party = ref(null);
+const party = ref(null)
 
 onMounted(() => {
   const id = parseInt(route.params.id)
-  party.value = parties.find((p) => p.id === id);
-});
+  party.value = parties.find((p) => p.id === id)
+})
 
 const formattedVotes = computed(() =>
-  party.value ? party.value.votes.toLocaleString("en-US") : ""
-);
+  party.value ? party.value.votes.toLocaleString('en-US') : '',
+)
 
 const goBack = () => {
-  router.push("/parties");
-};
+  router.push('/parties')
+}
 </script>
 
 <style scoped>
@@ -102,5 +102,6 @@ const goBack = () => {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 2vh;
 }
 </style>
