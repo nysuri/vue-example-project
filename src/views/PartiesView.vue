@@ -39,7 +39,6 @@ const filteredParties = computed(() => {
 
 // Lifecycle hooks
 onMounted(() => {
-  loadParties()
   console.log('✅ Parties page mounted')
 })
 
