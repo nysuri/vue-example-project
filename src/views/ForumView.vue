@@ -25,7 +25,7 @@
     <!-- Forum List -->
     <div class="forum-list">
       <!-- TODO: Show "No forums yet" message when forums array is empty -->
-      <div v-if="forums.length === 0" class="empty">No forums yet. Add one!</div>
+      <div class="empty">No forums yet. Add one!</div>
 
       <!-- TODO: Render forum items dynamically -->
       <div class="forum-item">
@@ -44,10 +44,7 @@ import { ref, onMounted, onUnmounted, onUpdated } from 'vue'
 const lastUpdated = ref(null)
 
 // TODO: make the variable forums, newTitle and newTheme reactive
-const forums = [
-  { title: 'Discussie over natuurbehoud', theme: 'Natuur' },
-  { title: 'Politieke debatten', theme: 'Politiek' },
-]
+const forums = []
 const newTitle = ''
 const newTheme = ''
 
@@ -71,9 +68,7 @@ onUpdated(() => {
 })
 
 // TODO: Use onUnmounted hook to save forums to localStorage (JSON.stringify)
-onUnmounted(() => {
-
-})
+onUnmounted(() => {})
 </script>
 
 <style>
