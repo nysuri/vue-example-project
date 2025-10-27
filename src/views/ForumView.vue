@@ -1,13 +1,13 @@
 <template>
   <div class="forum-page">
     <h1>Community Forums</h1>
-    <p v-if="lastUpdated">Last updated: {{ lastUpdated }}</p>
+    <p class="last-updated" v-if="lastUpdated">Last updated: {{ lastUpdated }}</p>
 
     <!-- Add Forum Section -->
     <!-- TODO: add submit event handler to form -->
     <form class="add-forum">
       <!-- TODO: Bind input to reactive newTitle -->
-      <input type="text" placeholder="Enter forum title..." />
+      <input type="text" v-model="newTitle" placeholder="Enter forum title..." />
 
       <!-- Theme selection -->
       <!-- TODO: Bind select to reactive newTheme -->
@@ -135,5 +135,10 @@ onUnmounted(() => {})
   text-align: center;
   color: #888;
   font-style: italic;
+}
+.last-updated {
+  text-align: center;
+  color: #666;
+  margin-bottom: 15px;
 }
 </style>
