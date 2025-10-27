@@ -4,7 +4,8 @@
     <p v-if="lastUpdated">Last updated: {{ lastUpdated }}</p>
 
     <!-- Add Forum Section -->
-    <form class="add-forum" @submit.prevent="addForum">
+    <!-- TODO: add submit event handler to form -->
+    <form class="add-forum">
       <!-- TODO: Bind input to reactive newTitle -->
       <input type="text" placeholder="Enter forum title..." />
 
