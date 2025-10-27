@@ -49,22 +49,17 @@ const forums = []
 const newTitle = ''
 const newTheme = ''
 
-// TODO: Create reactive refs for form inputs (newTitle & newTheme)
-
 // TODO: Implement addForum function to add a new forum to forums array
 const addForum = () => {
-  // 1. Check if inputs are filled
+  // 1. Check if inputs are filled --> if not, return early
   // 2. Add new forum to forums array
   // 3. Reset form inputs
 }
 
 // TODO: Use onMounted hook to load forums from localStorage (use JSON.parse)
-onMounted(() => {
-  const saved = localStorage.getItem('forums')
-})
+onMounted(() => {})
 
 onUpdated(() => {
-  console.log({ updated: lastUpdated.value })
   lastUpdated.value = new Date().toLocaleTimeString()
 })
 
