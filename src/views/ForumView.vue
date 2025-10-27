@@ -7,7 +7,7 @@
     <!-- TODO: add submit event handler to form -->
     <form class="add-forum">
       <!-- TODO: Bind input to reactive newTitle -->
-      <input type="text" v-model="newTitle" placeholder="Enter forum title..." />
+      <input type="text" placeholder="Enter forum title..." />
 
       <!-- Theme selection -->
       <!-- TODO: Bind select to reactive newTheme -->

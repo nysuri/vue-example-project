@@ -9,6 +9,7 @@ const routes = [
   { path: '/party/:id', component: PartyDetailView },
   { path: '/:pathMatch(.*)*', component: PathNotFoundView },
   // Todo: Add ForumView here mapped to /forum
+  { path: '/forum', component: () => import('@/views/ForumView.vue') },
 ]
 
 export const router = createRouter({
