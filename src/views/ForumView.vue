@@ -32,8 +32,6 @@
       <div class="forum-item">
         <h3>Forum title</h3>
         <p class="theme">Forum Theme</p>
-
-        <!-- TODO: Optional: add like button with thumbs up icon -->
       </div>
     </div>
   </div>
