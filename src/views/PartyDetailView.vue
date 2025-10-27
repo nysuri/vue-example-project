@@ -1,5 +1,24 @@
+<script setup>
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useParty } from '@/composables/useParty'
+import CandidateCard from '@/components/CandidateCard.vue'
+
+const route = useRoute()
+const router = useRouter()
+
+const id = parseInt(route.params.id)
+const { party, loading, error } = useParty(id)
+
+const formattedVotes = computed(() =>
+  party.value ? party.value.votes.toLocaleString('en-US') : '',
+)
+
+const goBack = () => router.push('/parties')
+</script>
+
 <template>
-  <div class="container" v-if="party">
+  <div class="container" v-if="!loading && party">
     <button class="back" @click="goBack">← Back to Parties</button>
 
     <div class="header">
@@ -27,32 +46,10 @@
       />
     </div>
   </div>
+
+  <div v-else-if="loading" class="container">Loading...</div>
+  <div v-else-if="error" class="container">{{ error }}</div>
 </template>
-
-<script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { parties } from '@/data/parties'
-import CandidateCard from '@/components/CandidateCard.vue'
-
-const route = useRoute()
-const router = useRouter()
-
-const party = ref(null)
-
-onMounted(() => {
-  const id = parseInt(route.params.id)
-  party.value = parties.find((p) => p.id === id)
-})
-
-const formattedVotes = computed(() =>
-  party.value ? party.value.votes.toLocaleString('en-US') : '',
-)
-
-const goBack = () => {
-  router.push('/parties')
-}
-</script>
 
 <style scoped>
 .container {

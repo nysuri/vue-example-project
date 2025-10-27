@@ -1,64 +1,79 @@
 <template>
   <div class="forum-page">
     <h1>Community Forums</h1>
+    <p v-if="lastUpdated">Last updated: {{ lastUpdated }}</p>
 
     <!-- Add Forum Section -->
-    <form class="add-forum">
-      <!-- TODO: Implement reactive state for form inputs -->
+    <form class="add-forum" @submit.prevent="addForum">
+      <!-- TODO: Bind input to reactive newTitle -->
       <input type="text" placeholder="Enter forum title..." />
-      <input type="text" placeholder="Enter forum description..." />
 
-      <!-- TODO: Handle add button click to create new forum post -->
-      <button>Add Forum</button>
+      <!-- Theme selection -->
+      <!-- TODO: Bind select to reactive newTheme -->
+      <select>
+        <option disabled value="">Select a theme</option>
+        <option value="Natuur">Natuur</option>
+        <option value="Politiek">Politiek</option>
+        <option value="Onderwijs">Onderwijs</option>
+        <option value="Technologie">Technologie</option>
+      </select>
+
+      <!-- TODO: Handle form submit to add new forum -->
+      <button type="submit">Add Forum</button>
     </form>
 
     <!-- Forum List -->
     <div class="forum-list">
-      <!-- TODO: Show "no forums" message only when the posts array is empty -->
-      <div class="empty">No forums yet. Add one!</div>
+      <!-- TODO: Show "No forums yet" message when forums array is empty -->
+      <div v-if="forums.length === 0" class="empty">No forums yet. Add one!</div>
 
-      <div v-for="(forum, index) in forums" :key="index" class="forum-item">
-        <h3>{{ forum.title }}</h3>
-        <p>{{ forum.description }}</p>
+      <!-- TODO: Render forum items dynamically -->
+      <div class="forum-item">
+        <h3>Forum title</h3>
+        <p class="theme">Forum Theme</p>
 
-        <!--  Todo: Add click handler -->
-        <div class="thumbs-up">
-          <ThumbsUp :size="16" />
-          <span>{{ forum.likes }}</span>
-        </div>
+        <!-- TODO: Optional: add like button with thumbs up icon -->
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { ThumbsUp } from 'lucide-vue-next'
+import { ref, onMounted, onUnmounted, onUpdated } from 'vue'
 
-const forums = ref([
-  {
-    title: 'General Discussion',
-    description: 'Talk about anything related to the community.',
-    likes: 4,
-  },
-  {
-    title: 'Project Help',
-    description: 'Get support with your ongoing projects.',
-    likes: 12,
-  },
-])
+const lastUpdated = ref(null)
 
-// Todo: Implement reactive state for form inputs
+// TODO: make the variable forums, newTitle and newTheme reactive
+const forums = [
+  { title: 'Discussie over natuurbehoud', theme: 'Natuur' },
+  { title: 'Politieke debatten', theme: 'Politiek' },
+]
+const newTitle = ''
+const newTheme = ''
 
+// TODO: Create reactive refs for form inputs (newTitle & newTheme)
+
+// TODO: Implement addForum function to add a new forum to forums array
 const addForum = () => {
-  // Todo: Add the new forum to the list
+  // 1. Check if inputs are filled
+  // 2. Add new forum to forums array
+  // 3. Reset form inputs
 }
 
-const likeForum = (idx) => {
-  const forum = forums.value.find((f, index) => index === idx)
+// TODO: Use onMounted hook to load forums from localStorage (use JSON.parse)
+onMounted(() => {
+  const saved = localStorage.getItem('forums')
+})
 
-  // Todo: Increment the likes for the forum
-}
+onUpdated(() => {
+  console.log({ updated: lastUpdated.value })
+  lastUpdated.value = new Date().toLocaleTimeString()
+})
+
+// TODO: Use onUnmounted hook to save forums to localStorage (JSON.stringify)
+onUnmounted(() => {
+
+})
 </script>
 
 <style>
@@ -83,7 +98,8 @@ const likeForum = (idx) => {
   margin-bottom: 20px;
 }
 
-.add-forum input {
+.add-forum input,
+.add-forum select {
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
@@ -121,17 +137,14 @@ const likeForum = (idx) => {
   margin: 0 0 6px;
 }
 
+.forum-item .theme {
+  font-style: italic;
+  color: #555;
+}
+
 .empty {
   text-align: center;
   color: #888;
   font-style: italic;
-}
-.thumbs-up {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  cursor: pointer;
-  color: #007bff;
-  margin-top: 10px;
 }
 </style>

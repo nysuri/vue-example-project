@@ -8,6 +8,7 @@ const routes = [
   { path: '/parties', component: PartiesView },
   { path: '/party/:id', component: PartyDetailView },
   { path: '/:pathMatch(.*)*', component: PathNotFoundView },
+  { path: '/forum', component: () => import('@/views/ForumView.vue') },
   // Todo: Add ForumView here mapped to /forum
 ]
 
